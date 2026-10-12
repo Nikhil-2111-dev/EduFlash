@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply font-sans bg-canvas text-ink antialiased;
+  }
+}
+
+@layer utilities {
+  /* Dot grid: 10% opacity is the single allowed opacity effect (R2) */
+  .bg-bauhaus-grid {
+    background-image: radial-gradient(rgba(18, 18, 18, 0.1) 2px, transparent 2px);
+    background-size: 24px 24px;
+  }
+  /* 3D flip */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  /* Card entrance animation */
+  @keyframes card-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-card-in {
+    animation: card-in 150ms ease-out both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "front": "What is the first packet sent in a TCP three-way handshake?",
+    "back": "SYN from client to server, carrying the client's initial sequence number.",
+    "tag": "TCP",
+    "difficulty": "easy"
+  },
+  {
+    "front": "What does the server send after receiving SYN?",
+    "back": "SYN-ACK: it acknowledges the client's sequence number and sends its own.",
+    "tag": "TCP",
+    "difficulty": "medium"
+  },
+  {
+    "front": "In the diagram, which message completes the handshake and who sends it?",
+    "back": "ACK, sent by the client; the connection is then ESTABLISHED on both sides.",
+    "tag": "Process Flow",
+    "difficulty": "medium"
+  },
+  {
+    "front": "Why can't data be sent before the third step finishes?",
+    "back": "Both sides must confirm sequence numbers first; otherwise delivery and ordering cannot be guaranteed.",
+    "tag": "Reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "front": "What state does the client enter after sending SYN?",
+    "back": "SYN-SENT, waiting for the server's SYN-ACK.",
+    "tag": "States",
+    "difficulty": "medium"
+  },
+  {
+    "front": "Which direction does the arrow for SYN-ACK point?",
+    "back": "From server to client, between the first and last arrows in the flow.",
+    "tag": "Diagram Reading",
+    "difficulty": "easy"
+  }
+]
