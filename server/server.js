@@ -197,7 +197,7 @@ app.post('/api/generate-cards', async (req, res) => {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
-    console.log(`GemmaFlash server listening on port ${PORT}`);
+    console.log(`EduFlash server listening on port ${PORT}`);
   });
 }
 

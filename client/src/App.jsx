@@ -7,7 +7,7 @@ import LoadingBar from './components/LoadingBar.jsx';
 import ErrorBanner from './components/ErrorBanner.jsx';
 import CardGrid from './components/CardGrid.jsx';
 
-const STORAGE_KEY = 'gemmaflash.deck.v1';
+const STORAGE_KEY = 'eduflash.deck.v1';
 const ALLOWED_MIME = ['image/png', 'image/jpeg', 'image/jpg'];
 const MAX_RAW_SIZE = 10 * 1024 * 1024; // 10 MB per image
 const MAX_IMAGES = 4;
@@ -42,7 +42,7 @@ export default function App() {
   // Restore deck from localStorage on initial mount
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('gemmaflash.deck.v1');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length >= 3) {
@@ -194,7 +194,7 @@ export default function App() {
           <div className="space-y-6">
             {/* Wordmark */}
             <div className="flex items-center gap-2">
-              <span className="font-black text-3xl md:text-4xl tracking-tight text-ink">GEMMA</span>
+              <span className="font-black text-3xl md:text-4xl tracking-tight text-ink">EDU</span>
               <span className="bg-bauhaus-red text-white font-black text-3xl md:text-4xl px-2.5 py-0.5 border-2 md:border-4 border-ink shadow-hard">
                 FLASH
               </span>
