@@ -6,9 +6,8 @@ import { GoogleGenAI } from '@google/genai';
 
 const app = express();
 const PORT = process.env.PORT || 8787;
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
-
-app.use(cors({ origin: CLIENT_ORIGIN }));
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
+app.use(cors(CLIENT_ORIGIN ? { origin: CLIENT_ORIGIN } : undefined));
 app.use(express.json({ limit: '50mb' }));
 
 const MODELS = [
