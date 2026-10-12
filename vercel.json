@@ -1,0 +1,20 @@
+{
+  "services": {
+    "client": {
+      "root": "client"
+    },
+    "server": {
+      "root": "server"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/server/:path*"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/client/$1"
+    }
+  ]
+}
